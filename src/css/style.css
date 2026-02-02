@@ -237,29 +237,57 @@ svg {
   grid-row: 2/3;
   display: flex;
   align-items: center;
-  gap: 1em;
-  padding: 0.5em 1em;
+  justify-content: flex-start;
+  gap: 1.5em;
+  padding: 1em 1.5em;
 }
 
 .hero-banner__title {
-  font-size: 1.8em;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--bs-white);
+  text-decoration: none;
+  line-height: 1;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.hero-banner__title:hover {
+  text-decoration: underline;
 }
 
 .hero-banner__subtitle {
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  line-height: 20px;
+  margin: 0;
+}
+
+.hero-banner__subtitle span {
+  display: block;
+  white-space: nowrap;
 }
 
 /* Park nav styling */
+.park-nav {
+  width: 100%;
+  background-color: var(--bs-black);
+}
+
 .park-nav > ul {
   list-style: none;
   padding-left: 0;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  background-color: var(--bs-black);
+  align-items: center;
+  max-width: 1200px;
   font-size: 0.8rem;
+}
+
+.park-nav > ul > li {
+  list-style: none;
 }
 
 .park-nav a {
@@ -268,13 +296,283 @@ svg {
   align-items: center;
   justify-content: center;
   padding: 0.8em 2em;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.park-nav a span {
+  color: white;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
 .park-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
 }
 
 .park-nav svg {
   width: 24px;
   height: 24px;
+  fill: white;
+}
+
+/* Ensure nav sits above hero image and is full-width */
+.park-nav {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-banner__content {
+  z-index: 3;
+}
+
+/* Park intro section */
+.park-intro {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.park-name {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: var(--bs-black);
+  font-weight: 600;
+}
+
+.park-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--bs-body-color);
+  margin: 0 0 2rem 0;
+}
+
+/* Park info links section */
+.park-info-links {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.park-info-links .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.park-info-links img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.park-info-links a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: var(--bs-link-color);
+  cursor: pointer;
+}
+
+.park-info-links a:hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+}
+
+.park-info-links p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Footer styling */
+#park-footer {
+  background-color: var(--bs-pampas);
+  padding: 2rem;
+  border-top: 3px solid var(--bs-black);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--bs-black);
+  font-weight: 600;
+}
+
+.footer-section {
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--bs-black);
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  color: var(--bs-body-color);
+  line-height: 1.6;
+}
+
+.footer-section a {
+  color: var(--bs-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-section a:hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline;
+}
+
+.footer-section a:visited {
+  color: var(--bs-link-color);
+}
+
+/* Responsive design for desktop */
+@media (min-width: 768px) {
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-content h2 {
+    grid-column: 1 / -1;
+  }
+
+  .global-header {
+    padding: 0 2rem;
+  }
+
+  .site-title {
+    flex: 1;
+  }
+
+  .site-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .hero-banner > img {
+    height: 500px;
+  }
+
+  .hero-banner__title {
+    font-size: 2.5em;
+  }
+
+  .hero-banner__subtitle {
+    font-size: 1rem;
+  }
+
+  .park-nav > ul {
+    justify-content: flex-start;
+  }
+
+  .park-nav a {
+    padding: 1rem 3rem;
+  }
+}
+
+/* Mobile styles (slim design) */
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .global-header {
+    padding: 0;
+  }
+
+  .site-title h1 {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .site-title > span {
+    margin-left: 0.2em;
+  }
+
+  .logo {
+    border-top: 20px solid var(--bs-light-green);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    margin: 0.25em;
+  }
+
+  .global-header__right button {
+    padding: 0.8em;
+    font-size: 0.8rem;
+  }
+
+  .hero-banner > img {
+    height: 250px;
+  }
+
+  .hero-banner__content {
+    padding: 0.3em 0.5em;
+    gap: 0.5em;
+  }
+
+  .hero-banner__title {
+    font-size: 1.2em;
+  }
+
+  .hero-banner__subtitle {
+    font-size: 0.65rem;
+  }
+
+  .park-nav > ul {
+    font-size: 0.65rem;
+  }
+
+  .park-nav a {
+    padding: 0.5em 0.8em;
+  }
+
+  .park-nav svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  #park-footer {
+    padding: 1.5rem;
+  }
+
+  .footer-content {
+    display: block;
+  }
+
+  .footer-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section {
+    margin-bottom: 1rem;
+  }
+
+  .footer-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+  }
 }
