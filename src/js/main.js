@@ -10,7 +10,7 @@ async function init() {
   
   document.querySelector("#park-footer").innerHTML = footerTemplate(parkData);
   document.querySelector(".park-info-links").innerHTML = parklinks(parkData);
-  document.querySelector("#park-header").innerHTML = parkInfoTemplate(parkData);
+  document.querySelector(".hero-banner").innerHTML = parkInfoTemplate(parkData);
 
 }
 
